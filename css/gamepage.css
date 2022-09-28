@@ -1,0 +1,152 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    margin-left: auto;
+    color: #000000;
+    background-color: antiquewhite;
+    flex: 1 1 auto;
+}
+
+header {
+    height: 75px;
+    width: auto;
+    display: flex;
+    margin-left: auto;
+    margin-bottom: 0px;
+    padding: 4px;
+    border: 1px solid black;
+}
+
+header p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    flex-grow: 1;
+    font-size: 21px;
+    font-weight: bold;
+    padding-left: 6px;
+    padding-top: 27px;
+}
+
+.logo {
+    height: 75px;
+    width: 75px;
+    float: left;
+    margin: 2px;
+    border: 2px solid black;
+}
+
+
+/*Lists for nav*/
+
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.li {
+    float: left;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-right: 2px solid #bbb;
+}
+
+.li:last-child {
+    border-right: none;
+}
+
+.li a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #000000;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*footer*/
+footer {
+    margin-top: auto;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+#background {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-sizing: content-box;
+    text-align: center;
+    overflow: hidden;
+    background-color: rgb(16, 16, 16);
+}
+
+#pannel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    opacity: 0.25;
+    float: right;
+}
+
+#pannel>button {
+    height: 30%;
+    width: 30%;
+    border-radius: 10%;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+#pannel>div {
+    display: flex;
+    height: 30%;
+    width: 90%;
+}
+
+#pannel>div>button {
+    height: 100%;
+    width: 33.33333333%;
+    border-radius: 10%;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+@media (orientation: landscape) {
+    main {
+        justify-content: center;
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        justify-content: start;
+    }
+}
