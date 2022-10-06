@@ -12,7 +12,7 @@ function responsiveWindow() {
         background.style.marginLeft = "auto";
         background.style.marginRight = "auto";
         background.style.marginUp = "2vh";
-        
+
         gridthing.style.width = "50vh";
         gridthing.style.height = "50vh";
     }
@@ -40,22 +40,34 @@ function responsiveWindow() {
 
 responsiveWindow();
 
+window.addEventListener('resize', () => {
+    responsiveWindow();
+})
+
+
+let dataBank = ['ROCKER', 'BANANA', 'ACCEPT', 'CASTLE', 'DEGREE', 'EMPLOY', 'HOLDER', 'HIDDEN', 'LEADER', 'MANNER', 'SCHOOL', 'SILENT', 'STRONG', 'THANKS', 'WRITER', 'WEEKLY', 'WRIGHT', 'VISION', 'TRYING', 'THREAT', 'TENNIS', 'SISTER', 'PRINCE', 'NATURE', 'MURDER', 'LEGACY', 'GROWTH', 'ESCAPE', 'DEPEND', 'CUSTOM', 'BUREAU', 'BECAME', 'AFFECT', 'ACROSS'];
+
+let pickedWord;
+
+function pickWord() {
+    pickedWord = dataBank[Math.floor(Math.random() * dataBank.length)];
+    console.log(pickedWord);
+}
+
+pickWord();
+
+let attemptedWord
+
 function validate(input) {
     input.value = input.value.replace(/\W|\d/g, '').substr(0, 1).toUpperCase();
 }
 
-function nextinp() {
-    if (this.value.length == this.maxLength) {
-        
+function verifyAnswer1() {
+    if (document.getElementById('gridInpA1').value.length == 1 && document.getElementById('gridInpA2').value.length == 1 && document.getElementById('gridInpA3').value.length == 1 && document.getElementById('gridInpA4').value.length == 1 && document.getElementById('gridInpA5').value.length == 1 && document.getElementById('gridInpA6').value.length == 1) {
+
+        attemptedWord.concat(document.getElementById('gridInpA1').innerText, document.getElementById('gridInpA2').innerText, document.getElementById('gridInpA3').innerText, document.getElementById('gridInpA4').innerText, document.getElementById('gridInpA5').innerText, document.getElementById('gridInpA6').innerText);
+        console.log(attemptedWord);
+
     }
+
 }
-
-$("#gridinp").keyup(function () {
-    if (this.value.length == this.maxLength) {
-        $(this).nextAll('.inputs:enabled:first').focus();
-    }
-});
-
-window.addEventListener('resize', () => {
-    responsiveWindow();
-})
